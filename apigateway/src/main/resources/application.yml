@@ -1,17 +1,21 @@
 spring:
+  main:
+    web-application-type: reactive
+  
   application:
     name: apigateway
   cloud:
     gateway:
       routes:
         - id: address-service
-          uri: lb://ADDRESS-SERVICE
+          uri: lb://address-service
           predicates:
             - Path=/api/address/**
         - id: student-service
-          uri: lb://STUDENT-SERVICE
+          uri: lb://student-service
           predicates:
             - Path=/api/student/**
+      
   server:
     port: 9090
 
