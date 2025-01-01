@@ -79,7 +79,16 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
 
-
+  frontend:
+    build:
+      context: ./frontend-vue
+    container_name: frontend
+    ports:
+      - "8077:8077" 
+    networks:
+      - app-network
+    depends_on:
+      - apigateway
 
 
 networks:

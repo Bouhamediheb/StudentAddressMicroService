@@ -1,6 +1,7 @@
 package com.omicrone.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import com.omicrone.response.StudentResponse;
 import com.omicrone.service.StudentService;
 
 @RestController
+@CrossOrigin(origins = "http://frontend:8077", allowedHeaders = "*")
 @RequestMapping("/api/student")
 public class StudentController {
 	
