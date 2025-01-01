@@ -9,11 +9,7 @@
         </div>
         <div>
           <label for="address">Select Address</label>
-          <select v-model="student.addressId" required>
-            <option v-for="address in addresses" :key="address.id" :value="address.id">
-              {{ address.street }}, {{ address.city }}
-            </option>
-          </select>
+          <input type="number" id="address" v-model="student.addressId" required />
         </div>
         <button type="submit">Create Student</button>
       </form>

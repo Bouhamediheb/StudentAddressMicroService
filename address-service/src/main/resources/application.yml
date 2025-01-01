@@ -1,11 +1,18 @@
 spring:
   cloud:
     gateway:
-      cors:
-        allowed-origins: "http://localhost:8077"  # Add your frontend's URL here
-        allowed-methods: "GET, POST, PUT, DELETE"
-        allowed-headers: "*"
-        allow-credentials: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
   application:
     name: address-service
   datasource:

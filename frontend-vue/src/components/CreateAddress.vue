@@ -35,7 +35,8 @@ export default {
   },
   methods: {
     submitAddress() {
-   axios.post('http://apigateway:8080/api/address/create', this.address)
+      console.log('Creating address:', this.address);
+   axios.post('http://localhost:8080/api/address/create', this.address)
       .then(() => {
         this.responseMessage = 'Address created successfully.';
         this.address.street = '';
@@ -46,6 +47,8 @@ export default {
         this.responseMessage = 'Failed to create address.';
         console.error('Error creating address:', error);
       });
+
+      
     },
   },
 };

@@ -14,7 +14,7 @@ import com.omicrone.response.StudentResponse;
 import com.omicrone.service.StudentService;
 
 @RestController
-@CrossOrigin(origins = "http://frontend:8077", allowedHeaders = "*")
+@CrossOrigin
 @RequestMapping("/api/student")
 public class StudentController {
 	

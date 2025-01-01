@@ -15,7 +15,7 @@ import com.omicrone.response.AddressResponse;
 import com.omicrone.service.AddressService;
 
 @RestController
-@CrossOrigin(origins = "http://frontend:8077", allowedHeaders = "*")
+@CrossOrigin
 @RequestMapping("/api/address")
 public class AddressController {
 
