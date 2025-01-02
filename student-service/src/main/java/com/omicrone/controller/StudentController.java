@@ -13,8 +13,9 @@ import com.omicrone.request.CreateStudentRequest;
 import com.omicrone.response.StudentResponse;
 import com.omicrone.service.StudentService;
 
+import java.util.List;
+
 @RestController
-@CrossOrigin
 @RequestMapping("/api/student")
 public class StudentController {
 	
@@ -27,7 +28,12 @@ public class StudentController {
 
 		return studentService.createStudent(createStudentRequest);
 	}
-	
+
+	@GetMapping("/getAllStudents")
+	public List<StudentResponse> getAllStudents() {
+		return studentService.getAllStudents();
+	}
+
 	@GetMapping("getById/{id}")
 	public StudentResponse getById (@PathVariable long id) {
 		return studentService.getById(id);

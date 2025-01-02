@@ -1,5 +1,6 @@
 package com.omicrone.feignclients;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +14,6 @@ public interface FeignClient {
 
     @GetMapping("/api/address/getById/{id}")
     AddressResponse getById(@PathVariable long id);
-
     @PostMapping("/api/address/create")
     AddressResponse createAddress(@RequestBody CreateAddressRequest createAddressRequest);
 }
